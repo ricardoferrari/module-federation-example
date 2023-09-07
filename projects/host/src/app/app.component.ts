@@ -1,6 +1,7 @@
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedLibService } from 'shared-lib';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ export class AppComponent {
 
    constructor(
     private router: Router,
+    private sharedService: SharedLibService;
    ) {}
 
   goDashboard() {
