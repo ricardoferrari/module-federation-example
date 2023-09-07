@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { ApplicationRef, Component, importProvidersFrom } from '@angular/core';
+import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  standalone: false
 })
 export class AppComponent {
-  title = 'dashboard';
+  title = 'app-dashboard';
 }

@@ -37,7 +37,7 @@ module.exports = {
 
         // For hosts (please adjust)
         remotes: {
-            "dashboard": "http://localhost:4200/remoteEntry.js",
+            "dashboard": "http://localhost:4201/remoteEntry.js",
 
         },
 
