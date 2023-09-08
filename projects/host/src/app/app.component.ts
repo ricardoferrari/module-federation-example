@@ -1,5 +1,5 @@
 import { loadRemoteModule } from '@angular-architects/module-federation';
-import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedLibService } from 'shared-lib';
 
@@ -8,16 +8,26 @@ import { SharedLibService } from 'shared-lib';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'host';
+  user = 'anonimo';
 
   @ViewChild('placeHolder', { read: ViewContainerRef })
    viewContainer!: ViewContainerRef;
 
    constructor(
     private router: Router,
-    private sharedService: SharedLibService;
-   ) {}
+    private sharedService: SharedLibService
+   ) {
+      this.sharedService.getUserObservable().subscribe( user => this.user = user)
+   }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.sharedService.setUser('Ricardo');
+      console.log('Disparou');
+    }, 5000);
+  }
 
   goDashboard() {
     this.router.navigate(['dashboard']);

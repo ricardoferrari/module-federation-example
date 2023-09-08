@@ -1,5 +1,5 @@
-import { ApplicationRef, Component, importProvidersFrom } from '@angular/core';
-import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
+import { Component } from '@angular/core';
+import { SharedLibService } from 'shared-lib';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,18 @@ import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
   standalone: false
 })
 export class AppComponent {
-  title = 'app-dashboard';
+  public user: string = 'Anônimo'
+  constructor(
+    private sharedService: SharedLibService
+  ) {
+    this.sharedService.getUserObservable().subscribe( value => {
+      this.user = value;
+      console.log('Atribuiu', value);
+    });
+    setTimeout(() => {
+      this.sharedService.setUser('Haroldo');
+      console.log('Disparou');
+    }, 7000);
+  }
+
 }
