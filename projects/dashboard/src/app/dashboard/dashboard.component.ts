@@ -3,11 +3,11 @@ import { SharedLibService } from 'shared-lib';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css'],
   standalone: false
 })
-export class AppComponent {
+export class DashboardComponent {
   public user: string = 'Anônimo'
   constructor(
     private sharedService: SharedLibService

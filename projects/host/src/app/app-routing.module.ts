@@ -23,11 +23,11 @@ const routes: Routes = [
         remoteEntry: 'http://localhost:4201/remoteEntry.js',
         exposedModule: './Module'
       })
-      .then(m => m.AppModule)
+      .then(m => m.DashboardModule)
   },
   {
     path: 'dashboard-module',
-    loadChildren: () => import('dashboard/Module').then(m => m.AppModule)
+    loadChildren: () => import('dashboard/Module').then(m => m.DashboardModule)
   },
 ];
 
