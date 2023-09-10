@@ -42,5 +42,14 @@ export class AppComponent implements OnInit {
     });
 
     this.viewContainer.createComponent(m.PainelComponent);
-}
+  }
+
+  async loadComponent(): Promise<void> {
+
+    const m = await loadRemoteModule({
+      type: 'module',
+      remoteEntry: 'http://localhost:4201/remoteEntry.js',
+      exposedModule: './web-components'
+    });
+  }
 }

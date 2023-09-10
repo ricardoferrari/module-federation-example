@@ -1,10 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedLibModule } from 'shared-lib';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-
-
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -14,4 +12,4 @@ import { DashboardComponent } from './dashboard.component';
     SharedLibModule
   ]
 })
-export class DashboardModule { }
+export class DashboardModule {}

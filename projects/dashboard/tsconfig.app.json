@@ -6,7 +6,8 @@
   },
   "files": [
     "src/main.ts",
-    "src/app/painel/painel.component.ts"
+    "src/app/painel/painel.component.ts",
+    "src/bootstrap-dashboard.ts"
   ],
   "include": [
     "src/**/*.d.ts"

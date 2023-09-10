@@ -35,6 +35,7 @@ module.exports = {
         exposes: {
           './Module': './projects/dashboard/src/app/dashboard/dashboard.module.ts',
           './Component': './projects/dashboard/src/app/painel/painel.component.ts',
+          './web-components': './projects/dashboard/src/bootstrap-dashboard.ts',
         },
 
         // For hosts (please adjust)
@@ -48,7 +49,7 @@ module.exports = {
           "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
           "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
           "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-
+          "@angular/platform-browser": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
           ...sharedMappings.getDescriptors()
         })
 
