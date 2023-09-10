@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SharedLibService } from 'shared-lib';
 
 @Component({
@@ -8,6 +8,7 @@ import { SharedLibService } from 'shared-lib';
   standalone: false
 })
 export class DashboardComponent {
+  @Input() greeting = 'Olá';
   public user: string = 'Anônimo'
   constructor(
     private sharedService: SharedLibService
